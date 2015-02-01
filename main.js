@@ -1,47 +1,48 @@
 
 //quote constructor
-var Quote = function (quote, author) {
+var Quote = function ( author, quote) {
 	this.quote = quote;
 	this.author = author;
-	this.quoteID = author + quote;
+	this.quoteID = author + "\n" + quote;
 
 	this.addQuoteToArray = function () {
 		quotesArr.push(this);
 	}
 
- 	this.renderQuoteContainer = function (){
-		var quoteContainer = $('<div class="quote-container" data-quoteID="'+this.quoteID+'">');
-		var quoteChangeContainer = $('<div class="quote-change-container">');
-		quoteContainer.append('<h5 class="author-main">' +this.author+ '</h5>', quoteChangeContainer, '<p>'+this.quote+'</p>');
-		var rankingContainer = $('<div class="ranking-container">')
-		for (var i = 1; i<=this.ranking; i++){
-			rankingContainer.append('<i class="icon-star star" data-ranking='+i+'></i>');			
-		}
-		for (var i=this.ranking+1; i<=5; i++){
-			rankingContainer.append('<i class="icon-star-empty star" data-ranking="'+i+'"></i>');
-		}
+ // 	this.renderQuoteContainer = function (){
+	// 	var quoteContainer = $('<div class="quote-container" data-quoteID="'+this.quoteID+'">');
+	// 	var quoteChangeContainer = $('<div class="quote-change-container">');
+	// 	quoteContainer.append('<h5 class="author-main">' +this.author+ '</h5>', quoteChangeContainer, '<p>'+this.quote+'</p>');
+	// 	var rankingContainer = $('<div class="ranking-container">')
+	// 	for (var i = 1; i<=this.ranking; i++){
+	// 		rankingContainer.append('<i class="icon-star star" data-ranking='+i+'></i>');			
+	// 	}
+	// 	for (var i=this.ranking+1; i<=5; i++){
+	// 		rankingContainer.append('<i class="icon-star-empty star" data-ranking="'+i+'"></i>');
+	// 	}
 
-		quoteChangeContainer.append(rankingContainer, '<input type="submit" value="Delete">');
-		return quoteContainer
+	// 	quoteChangeContainer.append(rankingContainer, '<input type="submit" value="Delete">');
+	// 	return quoteContainer
 
 
 
-	};
+	// };
 
 };
 
 
 var quotesArr = [quote1,quote2,quote3,quote4, quote5, quote6, quote7];
 
-var renderQuotesArr = function (){
+var renderQuotesArr = function () {
 	// sort quotes in array by ranking
 	quotesArr.sort(function(a,b){
-		if (a.ranking > b.ranking){
-			return 1;
-		}if (a.ranking < b.ranking){
-			return -1;
-		}return 0;
-	});
+			if (a.ranking > b.ranking){
+				return 1;
+			}if (a.ranking < b.ranking){
+				return -1;
+			}return 0;
+		});
+	};
 
 	$('.main-quote-list').empty();
 
@@ -63,12 +64,19 @@ var quote6 = new Quote('Kurt Vonnegut','Maturity is a bitter disappointment for 
 var quote6 = new Quote('Kurt Vonnegut','Beware of the man who works hard to learn something, learns it, and finds himself no wiser than before.');
 var quote7 = new Quote ('Kurt Vonnegut', 'The year was 2081, and everyone was finally equal.');
 
+var preSetQuotes = ['quote1','quote2','quote3', 'quote4','quote5','quote6'];
+
 $(document).on('ready', function() {
+	$('.container').append("<div>" + quote2.quoteID +" </div>");
 	
 	$('.submit').on('click', function(e) {
 		e.preventDefault();
 		var authorResponse= $('.author').val();
 		var authorQuote= $('.quote').val();
+
+		var newQuote = new Quote(authorResponse, authorResponse);
+
+		newQuote.addQuoteToArray();
 
 		$('.user-input').trigger('reset');
 		$('.postedResponse').append("<div>" + ' name: ' + authorResponse + "</div>");

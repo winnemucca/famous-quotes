@@ -1,4 +1,119 @@
+html {
+  background: url(http://thumbs.dreamstime.com/z/crumpled-paper-background-white-texture-abstract-35054818.jpg) ;
+}
+/*header styling*/
+.heading {
+background: url(http://upload.wikimedia.org/wikipedia/en/f/f5/Sexdsghdf.jpg) bottom center no-repeat;
+background-size: 250px 275px; 
+height: 450px;
+position: relative;
+
+
+}
+
+.headerTitle {
+  color: navy;
+  position: absolute;
+  font-size: 50px;
+  text-align: center;
+}
+
 .postedResponse {
 	font-size: 18px;
-	background-color: rgb(229, 173, 26);
 }
+
+/*navbar*/
+.navBar {
+  background: navy;
+  height: 100px;
+  border-radius: 10%;
+
+}
+/* form */
+.user-input {
+  margin: 2%;
+}
+
+.user-input input {
+  /*font-size: 18px;*/
+  height: 20px;
+  margin: 2% 0;
+}
+
+.submit {
+background: red;
+border: none;
+color: white;
+display: inline-block;
+padding: 10px 15px 30px;
+font-size: 20px;
+border-radius: 50%;
+
+}
+
+/*star rating*/
+/*.rating {
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+*/
+.five-star > span {
+	display: inline-block;
+	font-size: 30px;
+	color: gold;
+}
+
+.five-star:hover > span:before {
+	content: '\2605';
+	position: absolute;
+}
+
+.five-star > span ~ span:before {
+	content: '';
+}
+
+
+
+  /*here it is*/
+
+  .rating {
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+}
+.rating-input {
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 0 0 -16px;
+    opacity: 0;
+}
+.rating:hover .rating-star:hover,
+.rating:hover .rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background-position: 0 0;
+}
+.rating-star,
+.rating:hover .rating-star {
+    position: relative;
+    float: right;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+}
+
+
+
+
