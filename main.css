@@ -1,5 +1,7 @@
 html {
-  background: url(http://thumbs.dreamstime.com/z/crumpled-paper-background-white-texture-abstract-35054818.jpg) ;
+  background: url(http://img12.nnm.me/5/f/e/b/c/c62c06433bcdf52d21f2efeacc1.jpg) ;
+
+  /*background: url(http://image.naldzgraphics.net/2012/03/4-crumpled-paper-lines.jpg);*/
 }
 /*header styling*/
 .heading {
@@ -50,6 +52,20 @@ font-size: 20px;
 border-radius: 50%;
 
 }
+.random {
+background: red;
+border: none;
+color: white;
+display: inline-block;
+padding: 10px 15px 30px;
+font-size: 20px;
+border-radius: 50%;
+
+}
+
+.quotes {
+  border-bottom: 2px solid navy;
+}
 
 /*star rating*/
 /*.rating {
@@ -66,7 +82,7 @@ border-radius: 50%;
    position: absolute;
 }
 */
-.five-star > span {
+/*.five-star > span {
 	display: inline-block;
 	font-size: 30px;
 	color: gold;
@@ -79,7 +95,7 @@ border-radius: 50%;
 
 .five-star > span ~ span:before {
 	content: '';
-}
+}*/
 
 
 
@@ -107,7 +123,9 @@ border-radius: 50%;
 .rating-star,
 .rating:hover .rating-star {
     position: relative;
+    /*float: left;*/
     float: right;
+    /*direction: rtl;*/
     display: block;
     width: 16px;
     height: 16px;
